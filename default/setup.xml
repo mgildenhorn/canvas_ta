@@ -1,0 +1,113 @@
+<setup>
+  <block title="Configure Canvas Add-On - REQUIRED PARAMETERS">
+    <text>Setup screen for Canvas Add-On. All parameters are &lt;b&gt;REQUIRED&lt;/b&gt;.</text>
+  </block>
+    <block title="">
+    <text>----------</text>
+  </block>
+    <block title="Shared Parameters">
+    <text>These parameters are used commonly across all Canvas API calls.</text>
+  </block>
+  <block title="Canvas Server Name"
+         endpoint="canvas/canvassetup" entity="Required">
+         <text>&lt;b&gt;&lt;i&gt;{your-site}&lt;/i&gt;.instructure.com&lt;/b&gt; OR whatever your Canvas host is named (i.e. splunk.instructure.com)</text>
+         <input field="canvasurl">
+           <label>Canvas Host:</label>
+           <type>text</type>
+         </input>
+  </block>
+  <block title="Root Account ID"
+         endpoint="canvas/canvassetup" entity="Required">
+         <input field="rootaccountid">
+           <label>Canvas Root Account ID (Default is 1):</label>
+           <type>text</type>
+         </input>
+  </block>
+  <block title="Access Token"
+         endpoint="canvas/canvassetup" entity="Required">
+         <input field="canvastoken">
+           <label>Canvas Access Token:</label>
+           <type>text</type>
+         </input>
+  </block>
+  <block title="Events Per Page"
+         endpoint="canvas/canvassetup" entity="Required">
+         <text>Number of events that gets returned at a time. Used to control the size/memory used for the amount of data returned. In a single run, the add-on will continue grabbing events of this size, until all events have been returned.</text>
+         <text> </text>
+         <input field="per_page">
+           <label>Events Per Page: (Default is 1000)</label>
+           <type>text</type>
+         </input>
+  </block>
+  <block title="">
+    <text>----------</text>
+    <text>----------</text>
+  </block>
+  <block title="Initialization Parameters">
+    <text>These parameters are used during the &lt;b&gt;FIRST RUN ONLY&lt;/b&gt;. After initial run, the app keeps track of future entries called in separate config files.</text>
+  </block>
+  <block title="Start Date/Time (First Collection Only)"
+         endpoint="canvas/canvassetup" entity="Required">
+         <text>Format:</text>
+         <text>&lt;b&gt;YYYY-MM-DD&lt;/b&gt; (i.e. 2016-05-27 "Collect events starting on May 27th 2016 at midnight" )</text>
+         <text>or</text>
+         <text>&lt;b&gt;YYYY-MM-DDT{Hour in 24 Hour Format}:{2 Digit Minute}&lt;/b&gt; (i.e. 2016-05-27T21:03 "Collect events starting on May 27th 2016 at 9:03 PM local time") </text>
+         <input field="start_time">
+           <label>Start Time:</label>
+           <type>text</type>
+         </input>
+  </block>
+  <block title="End Date/Time (First Collection Only)"
+         endpoint="canvas/canvassetup" entity="Required">
+        <text>&lt;b&gt;NOTE:&lt;/b&gt; Events are &lt;b&gt;NOT&lt;/b&gt; collected for the time listed in the end time, but rather end at the minute prior. Please see below example translations.</text>
+         <text>Format:</text>
+         <text>&lt;b&gt;YYYY-MM-DD&lt;/b&gt; (i.e. 2016-05-27 "Last events collected are from May 26th 2016 at 11:59 PM local time" )</text>
+         <text>or</text>
+         <text>&lt;b&gt;YYYY-MM-DDT{Hour in 24 Hour Format}:{2 Digit Minute}&lt;/b&gt; (i.e. 2016-05-27T21:03 "Last events collected are from May 26th 2016 at 9:02 PM local time") </text>         
+         <input field="end_time">
+           <label>End Time:</label>
+           <type>text</type>
+         </input>
+  </block>
+  <block title="">
+    <text>----------</text>
+    <text>----------</text>
+    <text>----------</text>
+  </block>
+  <block title="Authentication Log Specific Parameters - These parameters are used in the 'auth_logs' input">
+    <text>These parameters merge the contextual information (user,login,account,page view) into each event. Without this info, there will only be an ID (or null for page views) without any actual link to the referenced information (Username, login_id, ...).</text>
+  </block>
+  <block title="Merge User Info"
+         endpoint="canvas/canvassetup" entity="Required">
+         <input field="merge_users">
+           <label>Enable Users Merge (Default: Checked (True))</label>
+           <type>bool</type>
+         </input>
+  </block>    
+  <block title="Merge Login Info"
+         endpoint="canvas/canvassetup" entity="Required">
+         <input field="merge_logins">
+           <label>Enable Logins Merge (Default: Checked (True))</label>
+           <type>bool</type>
+         </input>
+  </block> 
+  <block title="Merge Account Info"
+         endpoint="canvas/canvassetup" entity="Required">
+         <input field="merge_accts">
+           <label>Enable Accounts Merge (Default: Unchecked (False))</label>
+           <type>bool</type>
+         </input>
+  </block>
+  <block title="Merge Page View Info"
+         endpoint="canvas/canvassetup" entity="Required">
+         <input field="merge_pageviews">
+           <label>Enable Page Views Merge (Default: Unchecked (False))</label>
+           <type>bool</type>
+         </input>
+  </block> 
+  <block title="">
+    <text> </text>
+    <text> </text>
+    <text> </text>
+  </block>
+</setup>
