@@ -64,7 +64,7 @@ addon_path = os.path.abspath(os.path.join(addon_path,os.pardir))
 
 SCHEME = """<scheme>
     <title>Canvas</title>
-    <description>Input for collecting data from the Instructure Canvas LMS (Cloud Hosted Version)</description>
+    <description>Input for collecting data from the Instructure Canvas LMS</description>
     <use_external_validation>true</use_external_validation>
     <streaming_mode>xml</streaming_mode>
     <use_single_instance>false</use_single_instance>
