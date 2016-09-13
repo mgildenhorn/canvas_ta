@@ -75,19 +75,6 @@ SCHEME = """<scheme>
                 <title>REST input name</title>
                 <description>Name of this REST input</description>
             </arg>
-                   
-            <arg name="request_payload">
-                <title>Request Payload</title>
-                <description>Request payload for POST and PUT HTTP Methods</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="streaming_request">
-                <title>Streaming Request</title>
-                <description>Whether or not this is a HTTP streaming request : true | false</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
             <arg name="http_proxy">
                 <title>HTTP Proxy Address</title>
                 <description>HTTP Proxy Address</description>
@@ -115,54 +102,6 @@ SCHEME = """<scheme>
             <arg name="polling_interval">
                 <title>Polling Interval</title>
                 <description>Interval time in seconds to poll the endpoint</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="sequential_mode">
-                <title>Sequential Mode</title>
-                <description>Whether multiple requests spawned by tokenization are run in parallel or sequentially</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="sequential_stagger_time">
-                <title>Sequential Stagger Time</title>
-                <description>An optional stagger time period between sequential requests</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="delimiter">
-                <title>Delimiter</title>
-                <description>Delimiter to use for any multi "key=value" field inputs</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="index_error_response_codes">
-                <title>Index Error Responses</title>
-                <description>Whether or not to index error response codes : true | false</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="response_filter_pattern">
-                <title>Response Filter Pattern</title>
-                <description>Python Regex pattern, if present , responses must match this pattern to be indexed</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="custom_auth_handler">
-                <title>Custom_Auth Handler</title>
-                <description>Python classname of custom auth handler</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="custom_auth_handler_args">
-                <title>Custom_Auth Handler Arguments</title>
-                <description>Custom Authentication Handler arguments string ,  key=value,key2=value2</description>
-                <required_on_edit>false</required_on_edit>
-                <required_on_create>false</required_on_create>
-            </arg>
-            <arg name="cookies">
-                <title>Cookies</title>
-                <description>Persist cookies in format key=value,key2=value2,...</description>
                 <required_on_edit>false</required_on_edit>
                 <required_on_create>false</required_on_create>
             </arg>
