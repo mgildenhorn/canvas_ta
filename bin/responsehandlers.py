@@ -88,7 +88,7 @@ class CanvasAuthLogHandler:
                 next_link = response_object.links["next"]
                 while next_link:
                     try:
-                        next_response = requests.get(next_link["url"],headers=header)
+                        next_response = requests.get(next_link["url"],verify=False,headers=header)
                     except requests.exceptions.Timeout,e:
                         logging.error("HTTP Request Timeout error: %s" % str(e))
                         time.sleep(float(backoff_time))
